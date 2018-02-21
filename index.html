@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="BlueLabel">
   <title>BlueLabel</title>
-  <link href="https://libs.cartocdn.com/cartodb.js/v3/3.15/themes/css/cartodb.css" rel="stylesheet" />
+  <link href="css/cartodb.css" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css?family=Signika:300,400,600,700&amp;subset=latin-ext" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -168,13 +168,13 @@ over de risico’s van regenwateroverlast</h4>
 
 
 
-<script src="https://libs.cartocdn.com/cartodb.js/v3/3.15/cartodb.js"></script>
+<script src="js/cartodb.js"></script>
 <script>
 window.onload = function() {
   cartodb
     .createVis(
       "map",
-      "https://nens.cartodb.com/u/nens/api/v2/viz/46db84cc-7df1-4355-889c-e967d8ec5711/viz.json",
+      "http://nens.cartodb.com/u/nens/api/v2/viz/46db84cc-7df1-4355-889c-e967d8ec5711/viz.json",
       { legends: true, scrollwheel: false, shareable: false }
     )
     .done(function(vis, layers) {
