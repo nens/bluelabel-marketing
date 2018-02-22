@@ -9,7 +9,8 @@
   integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
   crossorigin=""/>
   <link href="https://fonts.googleapis.com/css?family=Signika:300,400,600,700&amp;subset=latin-ext" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animate.css">
 </head>
 
 <body>
@@ -130,6 +131,9 @@ over de risico’s van regenwateroverlast</h4>
 
 
 
+
+
+
 <!--   <div class="signup">
     <div class="container">
       <div class="row">
@@ -230,42 +234,176 @@ class QApp extends React.Component {
             questions: [
               {
                 id: 1,
-                open: false,
+                open: true,
                 q: "Waarom is Achmea BlueLabel partner?",
                 a: <div>
-                      <p>Als van origine coöperatieve organisatie gelooft Achmea er sterk in om samen problemen op te lossen. </p>
-                      <p>Klimaatverandering is één van deze onderwerpen. Achmea ziet de gevolgen van de klimaatverandering met name terugkomen in stijgende schade en overlast bij haar klanten. </p>
-                      <p>Om deze klanten te helpen te wapenen tegen de gevolgen van klimaatveranderingen en ervoor te zorgen dat de premies in de toekomst niet stijgen is Achmea Blue Label partner geworden.</p>
+                      <p>Als van origine coöperatieve organisatie gelooft Achmea er sterk in om samen problemen op te lossen. </p><br/>
+                      <p>Klimaatverandering is één van deze onderwerpen. Achmea ziet de gevolgen van de klimaatverandering met name terugkomen in stijgende schade en overlast bij haar klanten. </p><br/>
+                      <p>Om deze klanten te helpen te wapenen tegen de gevolgen van klimaatveranderingen en ervoor te zorgen dat de premies in de toekomst niet stijgen is Achmea BlueLabel partner geworden.</p>
                     </div>
               },
               {
                 id: 2,
                 open: false,
-                q: "Waarom is Royal HaskoningDHV Blue Label partner?",
+                q: "Waarom is Royal HaskoningDHV BlueLabel partner?",
                 a: <div>...</div>
-              }     
+              },
+              {
+                id: 3,
+                open: false,
+                q: "Wat is de relatie met de stresstest?",
+                a: <div>...</div>                
+              },
+              {
+                id: 4,
+                open: false,
+                q: "Waar vind ik meer informatie als gemeente?",
+                a: <div>...</div>                
+              },
+              {
+                id: 5,
+                open: false,
+                q: "Hoe kan ik mij aanmelden voor BlueLabel?",
+                a: <div>...</div>                
+              },
+              {
+                id: 6,
+                open: false,
+                q: "Wanneer ontvang ik BlueLabel?",
+                a: <div>...</div>                
+              }
             ]
           },
           {
             title: "Gemeenten",
             questions: [
               {
-                id: 3,
-                open: false,
+                id: 7,
+                open: true,
                 q: "Waarom is BlueLabel geschikt voor gemeenten?",
                 a: <div>
-                      <p>Gemeenten kunnen BlueLabel perfect inzetten al communicatiemiddel naar hun burgers. </p>
+                      <p>Gemeenten kunnen BlueLabel perfect inzetten al communicatiemiddel naar hun burgers.</p><br/>
                       <p>Hierdoor wordt de burger zich bewust van het risico dat hij/zij loopt en wordt de burger geholpen om daar wat aan te doen.</p>
                     </div>
               },
               {
-                id: 4,
+                id: 8,
                 open: false,
                 q: "Wat kost BlueLabel?",
                 a: <div>...</div>
-              }        
+              },
+              {
+                id: 9,
+                open: false,
+                q: "Wat is de relatie met de stresstest?",
+                a: <div>...</div>
+              },
+              {
+                id: 10,
+                open: false,
+                q: "Waar vind ik meer informatie als gemeente?",
+                a: <div>...</div>
+              },
+              {
+                id: 11,
+                open: false,
+                q: "Hoe kan ik mij aanmelden voor BlueLabel?",
+                a: <div>...</div>
+              },
+              {
+                id: 12,
+                open: false,
+                q: "Wanneer ontvang ik BlueLabel?",
+                a: <div>...</div>
+              }
             ]
-          }  
+          },
+          {
+            title: "Bedrijven en consumenten",
+            questions: [
+              {
+                id: 13,
+                open: true,
+                q: "Kan ik als bedrijf ook een BlueLabel krijgen?",
+                a: <div>
+                      <p>Jazeker! Neem daarvoor contact op met <u>BlueLabel</u>, dan kijken we samen hoe we dit voor u op maat kunnen inrichten.</p>
+                    </div>
+              },
+              {
+                id: 14,
+                open: false,
+                q: "Wat moet ik doen als mijn huidige BlueLabel niet klopt?",
+                a: <div>...</div>
+              },
+              {
+                id: 15,
+                open: false,
+                q: "Kan ik als consument / inwoner ook BlueLabel krijgen?",
+                a: <div>...</div>
+              },
+              {
+                id: 16,
+                open: false,
+                q: "Heeft BlueLabel impact op de premie die ik alsverzekerde moet betalen?",
+                a: <div>...</div>
+              },
+              {
+                id: 17,
+                open: false,
+                q: "Heeft BlueLabel effect op de waarde van mijn huis?",
+                a: <div>...</div>
+              },
+              {
+                id: 18,
+                open: false,
+                q: "Is BlueLabel verplicht?",
+                a: <div>...</div>
+              },
+              {
+                id: 19,
+                open: false,
+                q: "Hoe helpt BlueLabel om concreet percelen preventief te beschermen tegen wateroverlast?",
+                a: <div>...</div>
+              }
+            ]
+          },
+          {
+            title: "Technische vragen",
+            questions: [
+              {
+                id: 20,
+                open: true,
+                q: "Hoe worden de Blue Maps bepaald?",
+                a: <div>
+                      <p>Voor het afleiden de Blue Maps worden 3Di modellen gebruikt. Deze modellen zijn gebaseerd op de meest recente versie van de Actuele Hoogtekaart van Nederland en de landgebruikskaart (BGT).</p>
+                    </div>
+              },
+              {
+                id: 21,
+                open: false,
+                q: "Hoe wordt het BlueLabel bepaald?",
+                a: <div>...</div>
+              },
+              {
+                id: 22,
+                open: false,
+                q: "Welke neerslag bui is gebruikt?",
+                a: <div>...</div>
+              },
+              {
+                id: 23,
+                open: false,
+                q: "Is de riolering meegenomen in de bepaling?",
+                a: <div>...</div>
+              },
+              {
+                id: 24,
+                open: false,
+                q: "Ik heb al een wateroverlast kaart, kan ik die gebruiken?",
+                a: <div>...</div>
+              }
+            ]
+          }          
         ]
       };
     }
@@ -295,12 +433,13 @@ class QApp extends React.Component {
                   <div className="container">
                     <div className="row">
                       <div className="colxs12 colsm12 colmd12 collg12 qa-content">
-                        <h1>Vaakgestelde vragen | {category.title}</h1>
+                        <h1>Vaakgestelde vragen > {category.title}</h1>
                         {category.questions.map((qa, j) => {
                           return (
-                            <div key={j}>
-                              <div onClick={() => this.handleQuestionClick(qa.id)} className="qa-question">{qa.q}</div>
-                              {qa.open ? <div className="qa-answer">{qa.a}</div> : null}
+                            <div key={j} onClick={() => this.handleQuestionClick(qa.id)} className="question-wrapper">
+                              {qa.open ? <div className="openClose">-</div> : <div className="openClose">+</div>}
+                              <div className="qa-question">{qa.q}</div>
+                              {qa.open ? <div className="qa-answer animated fadeInDown">{qa.a}</div> : null}
                             </div>
                           );
                         })}
