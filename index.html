@@ -126,33 +126,7 @@ over de risico’s van regenwateroverlast</h4>
 
 
 
-
-
-  <div class="q-and-a">
-    <div class="container">
-      <div class="row">
-        <div class="colxs12 colsm12 colmd12 collg12">
-          <div class="qa-content">
-            <h1>Vaakgestelde vragen > Algemeen</h1>
-
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="q-and-a">
-    <div class="container">
-      <div class="row">
-        <div class="colxs12 colsm12 colmd12 collg12">
-          <div class="qa-content">
-            <h1>Vaakgestelde vragen > Gemeenten</h1>
-            
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  <div id="qa-app"></div>
 
 
 
@@ -175,6 +149,12 @@ over de risico’s van regenwateroverlast</h4>
  integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw=="
  crossorigin=""></script>
 <script src="js/leaflet.sleep.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react-dom.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.21.1/babel.min.js"></script>
+
+
 
 <script>
 function reqListener() {
@@ -235,6 +215,106 @@ searchbox.onkeypress = function(e) {
     oReq.send();
   }
 };
+
+</script>
+
+
+<script type="text/babel">
+class QApp extends React.Component {
+    constructor() {
+      super();
+      this.state = {
+        data: [
+          {
+            title: "Algemeen",
+            questions: [
+              {
+                id: 1,
+                open: false,
+                q: "Waarom is Achmea BlueLabel partner?",
+                a: <div>
+                      <p>Als van origine coöperatieve organisatie gelooft Achmea er sterk in om samen problemen op te lossen. </p>
+                      <p>Klimaatverandering is één van deze onderwerpen. Achmea ziet de gevolgen van de klimaatverandering met name terugkomen in stijgende schade en overlast bij haar klanten. </p>
+                      <p>Om deze klanten te helpen te wapenen tegen de gevolgen van klimaatveranderingen en ervoor te zorgen dat de premies in de toekomst niet stijgen is Achmea Blue Label partner geworden.</p>
+                    </div>
+              },
+              {
+                id: 2,
+                open: false,
+                q: "Waarom is Royal HaskoningDHV Blue Label partner?",
+                a: <div>...</div>
+              }     
+            ]
+          },
+          {
+            title: "Gemeenten",
+            questions: [
+              {
+                id: 3,
+                open: false,
+                q: "Waarom is BlueLabel geschikt voor gemeenten?",
+                a: <div>
+                      <p>Gemeenten kunnen BlueLabel perfect inzetten al communicatiemiddel naar hun burgers. </p>
+                      <p>Hierdoor wordt de burger zich bewust van het risico dat hij/zij loopt en wordt de burger geholpen om daar wat aan te doen.</p>
+                    </div>
+              },
+              {
+                id: 4,
+                open: false,
+                q: "Wat kost BlueLabel?",
+                a: <div>...</div>
+              }        
+            ]
+          }  
+        ]
+      };
+    }
+    handleQuestionClick(id) {
+      const dataCopy = this.state.data.slice();
+
+      dataCopy.map(d => {
+        return d.questions.map(q => {
+          if (q.id === id) {
+            q.open = !q.open;
+          }
+          return q;
+        });
+      });
+
+      this.setState({
+        data: dataCopy
+      });
+    }
+
+    render() {
+        return (
+          <div>
+            {this.state.data.map((category, i) => {
+              return (
+                <div key={i} className="q-and-a">
+                  <div className="container">
+                    <div className="row">
+                      <div className="colxs12 colsm12 colmd12 collg12 qa-content">
+                        <h1>Vaakgestelde vragen | {category.title}</h1>
+                        {category.questions.map((qa, j) => {
+                          return (
+                            <div key={j}>
+                              <div onClick={() => this.handleQuestionClick(qa.id)} className="qa-question">{qa.q}</div>
+                              {qa.open ? <div className="qa-answer">{qa.a}</div> : null}
+                            </div>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  </div>
+                </div>              
+              );
+            })}
+          </div>
+        );
+    }
+}
+ReactDOM.render(<QApp />, document.getElementById("qa-app"));
 </script>
 </body></html>
     
