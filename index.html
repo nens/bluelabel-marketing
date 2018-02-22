@@ -76,7 +76,9 @@ over de risico’s van regenwateroverlast</h4>
       <div class="row">
         <div class="colxs12 colsm12 colmd12 collg12">
           <div class="map-content">
-            <input type="text" name="seachbox" id="searchbox" />
+          	<div class="searchbox-wrapper">
+          		<input type="text" name="seachbox" id="searchbox" placeholder="Bijvoorbeeld: Utrecht" />
+          	</div>
             <div id="map"></div>
           </div>
         </div>
@@ -175,58 +177,64 @@ over de risico’s van regenwateroverlast</h4>
 <script src="js/leaflet.sleep.js"></script>
 
 <script>
-  function reqListener() {
-    var response = JSON.parse(this.responseText);
-    var results = response.results;
-    if (results.length > 0) {
-      var result = results[0];
-      var bounds = result.geometry.bounds;
-      console.log(bounds);
-      bluelabelmap.flyToBounds(
-        [[bounds.northeast.lat, bounds.northeast.lng],
-        [bounds.southwest.lat, bounds.southwest.lng]], {duration: 0.5});
-    }
+function reqListener() {
+  var response = JSON.parse(this.responseText);
+  var results = response.results;
+  if (results.length > 0) {
+    var result = results[0];
+    var bounds = result.geometry.bounds;
+    bluelabelmap.flyToBounds(
+      [
+        [bounds.northeast.lat, bounds.northeast.lng],
+        [bounds.southwest.lat, bounds.southwest.lng]
+      ],
+      { duration: 0.5 }
+    );
+  } else {
+    bluelabelmap.flyToBounds([
+      [53.10391891198363, 7.327880859375001],
+      [51.251601468176545, 3.2080078125000004]
+    ]);
   }
+}
 
-  var bluelabelmap = L.map("map", {
-    scrollWheelZoom: false,
-    sleepOpacity: 1.0,
- 	hoverToWake: false,   
-    wakeMessage: "Klik om de kaart te activeren"
-  }).setView([52.1858, 5.2677], 8);
+var bluelabelmap = L.map("map", {
+  scrollWheelZoom: false,
+  sleepOpacity: 1.0,
+  hoverToWake: false,
+  wakeMessage: "Klik om de kaart te activeren"
+}).setView([52.1858, 5.2677], 8);
 
-  // Light background layer (no labels)
-  L.tileLayer(
-    "https://cartodb-basemaps-b.global.ssl.fastly.net/light_nolabels/{z}/{x}/{y}.png"
-  ).addTo(bluelabelmap);
+// Light background layer (no labels)
+L.tileLayer(
+  "https://cartodb-basemaps-b.global.ssl.fastly.net/light_nolabels/{z}/{x}/{y}.png"
+).addTo(bluelabelmap);
 
-  // Blue label progress layer
-  L.tileLayer(
-    "https://cartocdn-ashbu.global.ssl.fastly.net/nens/api/v1/map/11038975af9b28d96d4170907fee4cfc:1518171433268/0/{z}/{x}/{y}.png",
-    {}
-  ).addTo(bluelabelmap);
+// Blue label progress layer
+L.tileLayer(
+  "https://cartocdn-ashbu.global.ssl.fastly.net/nens/api/v1/map/11038975af9b28d96d4170907fee4cfc:1518171433268/0/{z}/{x}/{y}.png",
+  {}
+).addTo(bluelabelmap);
 
-  // Map labels layer
-  L.tileLayer(
-    "https://cartodb-basemaps-d.global.ssl.fastly.net/light_only_labels/{z}/{x}/{y}.png"
-  ).addTo(bluelabelmap);
+// Map labels layer
+L.tileLayer(
+  "https://cartodb-basemaps-d.global.ssl.fastly.net/light_only_labels/{z}/{x}/{y}.png"
+).addTo(bluelabelmap);
 
-  var searchbox = document.getElementById("searchbox");
-  searchbox.onkeypress = function(e) { 
-    if (e.key === "Enter") {
-      var oReq = new XMLHttpRequest();
-      oReq.addEventListener("load", reqListener);
-      oReq.open(
-        "GET",
-        "https://maps.googleapis.com/maps/api/geocode/json?address=" + searchbox.value + "&bounds=51.33082615404365,5.234642028808594%7C51.56704042487178,5.597877502441406&language=nl&key=AIzaSyAWvbJgghEB1tOC_fs_ry0r7HPBFkp7lDw"
-      );
-      oReq.send();     
-    }
-  };
-
-
- 
-
+var searchbox = document.getElementById("searchbox");
+searchbox.onkeypress = function(e) {
+  if (e.key === "Enter") {
+    var oReq = new XMLHttpRequest();
+    oReq.addEventListener("load", reqListener);
+    oReq.open(
+      "GET",
+      "https://maps.googleapis.com/maps/api/geocode/json?address=" +
+        searchbox.value +
+        "&bounds=51.33082615404365,5.234642028808594%7C51.56704042487178,5.597877502441406&language=nl&key=AIzaSyAWvbJgghEB1tOC_fs_ry0r7HPBFkp7lDw"
+    );
+    oReq.send();
+  }
+};
 </script>
 </body></html>
     
