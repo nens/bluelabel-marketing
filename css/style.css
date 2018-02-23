@@ -111,6 +111,11 @@ body {
   color: #ccc5f4;
 }
 
+
+
+
+
+
 .counter {
   background-color: #f6f9fc;
   min-height: 100px;
@@ -118,17 +123,10 @@ body {
 }
 
 .counter-content {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
   padding: 30px;
 }
 .counter-button {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  position: relative;
   height: 100%;
   text-align: center;
 }
@@ -144,6 +142,76 @@ body {
   color: #6875e2;
   margin: 10px 0 35px 0;
 }
+.btn-more-info {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.btn-more-info {
+  width: 220px;
+  height: 50px;
+  background: #ffffff;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  text-transform: uppercase;
+  color: #6875e2;
+  margin: 10px;
+}
+/* Smartphones (portrait)  */
+@media (max-width: 320px) {
+  .btn-more-info {
+    width: 220px;
+    height: 50px;
+  }
+}
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+  .btn-more-info {
+    width: 150px;
+    height: 60px;
+    font-size: 14px;
+  }
+}
+@media only screen and (min-width: 481px) and (max-width: 767px) {
+  .btn-more-info {
+    width: 150px;
+    height: 60px;
+  }
+}
+/* Tablets (portrait)  */
+@media (min-width: 768px) {
+  .btn-more-info {
+    width: 220px;
+    height: 50px;
+  }
+}
+@media (min-width: 992px) {
+  .btn-more-info {
+    width: 220px;
+    height: 50px;
+  }
+}
+@media (min-width: 1200px) {
+  .btn-more-info {
+    width: 220px;
+    height: 50px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
 
 .curious .curious-content {
   display: flex;
@@ -267,68 +335,27 @@ body {
   .curve {
     display: none;
   }
+  .bluelabel-and-bluemap .afbeelding img {
+    padding: 0;
+    box-shadow: none;
+  }
 }
 @media only screen and (min-width: 320px) and (max-width: 480px) {
   .curve {
     display: none;
   }
+  .bluelabel-and-bluemap .afbeelding img {
+    padding: 0;
+    box-shadow: none;
+  }  
 }
 @media only screen and (min-width: 480px) and (max-width: 768px) {
   .curve {
     display: none;
   }
-}
-
-.btn-more-info {
-  width: 220px;
-  height: 50px;
-  background: #ffffff;
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  text-transform: uppercase;
-  color: #6875e2;
-  margin: 10px;
-}
-/* Smartphones (portrait)  */
-@media (max-width: 320px) {
-  .btn-more-info {
-    width: 220px;
-    height: 50px;
-  }
-}
-@media only screen and (min-width: 320px) and (max-width: 480px) {
-  .btn-more-info {
-    width: 150px;
-    height: 60px;
-    font-size: 14px;
-  }
-}
-@media only screen and (min-width: 480px) and (max-width: 768px) {
-  .btn-more-info {
-    width: 120px;
-    height: 50px;
-  }
-}
-/* Tablets (portrait)  */
-@media (min-width: 768px) {
-  .btn-more-info {
-    width: 220px;
-    height: 50px;
-  }
-}
-@media (min-width: 992px) {
-  .btn-more-info {
-    width: 220px;
-    height: 50px;
-  }
-}
-@media (min-width: 1200px) {
-  .btn-more-info {
-    width: 220px;
-    height: 50px;
+  .bluelabel-and-bluemap .afbeelding img {
+    padding: 0;
+    box-shadow: none;
   }
 }
 

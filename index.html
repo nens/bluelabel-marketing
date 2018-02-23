@@ -34,17 +34,17 @@ over de risico’s van regenwateroverlast</h4>
   <div class="counter">
     <div class="container">
       <div class="row">
-        <div class="colxs12 colsm6 colmd6 collg6">
+        <div class="colxs6 colsm6 colmd6 collg6">
           <div class="counter-content">
             <div class="counter-text">
               <h4>Officiële lancering</h4>
-              <p>BlueLabel en Blue Maps lanceren over 34 dagen</p>
+              <p><span id="counter-app" /></p>
             </div>
           </div>
         </div>
-        <div class="colxs12 colsm6 colmd6 collg6">
+        <div class="colxs6 colsm6 colmd6 collg6">
           <div class="counter-button">
-            <div class="btn-more-info">
+            <div class="btn-more-info" id="btn-more-info">
               Meer informatie
             </div>
           </div>
@@ -55,11 +55,11 @@ over de risico’s van regenwateroverlast</h4>
 
 
 
-  <div class="curious">
+  <div class="curious" id="btn-go-to-map">
     <div class="container">
       <div class="row">
         <div class="colxs12 colsm12 colmd12 collg12">
-          <div class="curious-content">
+          <div class="curious-content" style="cursor: pointer;">
             <h4>Van elke woning en bedrijfspand in Nederland wordt een BlueLabel bepaald</h4>
             <h2>Benieuwd of er voor uw gemeente al een BlueLabel of Blue Map beschikbaar is?</h2>
             <h4><u>Bekijk het op onze voortgangskaart</u></h4>
@@ -153,11 +153,11 @@ over de risico’s van regenwateroverlast</h4>
  integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw=="
  crossorigin=""></script>
 <script src="js/leaflet.sleep.js"></script>
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react-dom.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.21.1/babel.min.js"></script>
-
+<script>!function(){"use strict";function o(o){var t=["MSIE ","Trident/","Edge/"];return new RegExp(t.join("|")).test(o)}function t(){function t(o,t){this.scrollLeft=o,this.scrollTop=t}function r(o){return.5*(1-Math.cos(Math.PI*o))}function i(o){if(null===o||"object"!=typeof o||void 0===o.behavior||"auto"===o.behavior||"instant"===o.behavior)return!0;if("object"==typeof o&&"smooth"===o.behavior)return!1;throw new TypeError("behavior member of ScrollOptions "+o.behavior+" is not a valid value for enumeration ScrollBehavior.")}function s(o,t){return"Y"===t?o.clientHeight+h<o.scrollHeight:"X"===t?o.clientWidth+h<o.scrollWidth:void 0}function c(o,t){var e=l.getComputedStyle(o,null)["overflow"+t];return"auto"===e||"scroll"===e}function n(o){var t=s(o,"Y")&&c(o,"Y"),l=s(o,"X")&&c(o,"X");return t||l}function f(o){var t;do{t=(o=o.parentNode)===e.body}while(!1===t&&!1===n(o));return t=null,o}function a(o){var t,e,i,s=(y()-o.startTime)/v;t=r(s=s>1?1:s),e=o.startX+(o.x-o.startX)*t,i=o.startY+(o.y-o.startY)*t,o.method.call(o.scrollable,e,i),e===o.x&&i===o.y||l.requestAnimationFrame(a.bind(l,o))}function p(o,r,i){var s,c,n,f,p=y();o===e.body?(s=l,c=l.scrollX||l.pageXOffset,n=l.scrollY||l.pageYOffset,f=u.scroll):(s=o,c=o.scrollLeft,n=o.scrollTop,f=t),a({scrollable:s,method:f,startTime:p,startX:c,startY:n,x:r,y:i})}if(!("scrollBehavior"in e.documentElement.style&&!0!==l.__forceSmoothScrollPolyfill__)){var d=l.HTMLElement||l.Element,v=468,h=o(l.navigator.userAgent)?1:0,u={scroll:l.scroll||l.scrollTo,scrollBy:l.scrollBy,elementScroll:d.prototype.scroll||t,scrollIntoView:d.prototype.scrollIntoView},y=l.performance&&l.performance.now?l.performance.now.bind(l.performance):Date.now;l.scroll=l.scrollTo=function(){void 0!==arguments[0]&&(!0!==i(arguments[0])?p.call(l,e.body,void 0!==arguments[0].left?~~arguments[0].left:l.scrollX||l.pageXOffset,void 0!==arguments[0].top?~~arguments[0].top:l.scrollY||l.pageYOffset):u.scroll.call(l,void 0!==arguments[0].left?arguments[0].left:"object"!=typeof arguments[0]?arguments[0]:l.scrollX||l.pageXOffset,void 0!==arguments[0].top?arguments[0].top:void 0!==arguments[1]?arguments[1]:l.scrollY||l.pageYOffset))},l.scrollBy=function(){void 0!==arguments[0]&&(i(arguments[0])?u.scrollBy.call(l,void 0!==arguments[0].left?arguments[0].left:"object"!=typeof arguments[0]?arguments[0]:0,void 0!==arguments[0].top?arguments[0].top:void 0!==arguments[1]?arguments[1]:0):p.call(l,e.body,~~arguments[0].left+(l.scrollX||l.pageXOffset),~~arguments[0].top+(l.scrollY||l.pageYOffset)))},d.prototype.scroll=d.prototype.scrollTo=function(){if(void 0!==arguments[0])if(!0!==i(arguments[0])){var o=arguments[0].left,t=arguments[0].top;p.call(this,this,void 0===o?this.scrollLeft:~~o,void 0===t?this.scrollTop:~~t)}else{if("number"==typeof arguments[0]&&void 0===arguments[1])throw new SyntaxError("Value couldn't be converted");u.elementScroll.call(this,void 0!==arguments[0].left?~~arguments[0].left:"object"!=typeof arguments[0]?~~arguments[0]:this.scrollLeft,void 0!==arguments[0].top?~~arguments[0].top:void 0!==arguments[1]?~~arguments[1]:this.scrollTop)}},d.prototype.scrollBy=function(){void 0!==arguments[0]&&(!0!==i(arguments[0])?this.scroll({left:~~arguments[0].left+this.scrollLeft,top:~~arguments[0].top+this.scrollTop,behavior:arguments[0].behavior}):u.elementScroll.call(this,void 0!==arguments[0].left?~~arguments[0].left+this.scrollLeft:~~arguments[0]+this.scrollLeft,void 0!==arguments[0].top?~~arguments[0].top+this.scrollTop:~~arguments[1]+this.scrollTop))},d.prototype.scrollIntoView=function(){if(!0!==i(arguments[0])){var o=f(this),t=o.getBoundingClientRect(),r=this.getBoundingClientRect();o!==e.body?(p.call(this,o,o.scrollLeft+r.left-t.left,o.scrollTop+r.top-t.top),"fixed"!==l.getComputedStyle(o).position&&l.scrollBy({left:t.left,top:t.top,behavior:"smooth"})):l.scrollBy({left:r.left,top:r.top,behavior:"smooth"})}else u.scrollIntoView.call(this,void 0===arguments[0]||arguments[0])}}}var l=window,e=document;"object"==typeof exports?module.exports={polyfill:t}:t()}();
+</script>
 
 
 <script>
@@ -220,10 +220,71 @@ searchbox.onkeypress = function(e) {
   }
 };
 
+
+var btnMoreInfo = document.getElementById("btn-more-info");
+btnMoreInfo.onclick = function(e) {
+  document.querySelector('#qa-app').scrollIntoView({ 
+    behavior: 'smooth' 
+  });  
+}
+
+var btnGoToMap = document.getElementById("btn-go-to-map");
+btnGoToMap.onclick = function(e) {
+  document.querySelector('#map').scrollIntoView({ 
+    behavior: 'smooth' 
+  });  
+}
 </script>
 
 
 <script type="text/babel">
+const deadline = "Sat Mar 15 2018 17:00:00 GMT+0100 (CET)";
+
+class Counter extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      secondsRemaining: this.getTimeRemaining(deadline)
+    };
+    this.tick = this.tick.bind(this);
+  }
+  componentDidMount() {
+    this.interval = setInterval(this.tick, 1000);
+  }
+  getTimeRemaining(endtime) {
+    var t = Date.parse(endtime) - Date.parse(new Date());
+    var seconds = Math.floor((t / 1000) % 60);
+    var minutes = Math.floor((t / 1000 / 60) % 60);
+    var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
+    var days = Math.floor(t / (1000 * 60 * 60 * 24));
+    return {
+      'total': t,
+      'days': days,
+      'hours': hours,
+      'minutes': minutes,
+      'seconds': seconds
+    };
+  }
+  tick() {
+    this.setState({secondsRemaining: this.state.secondsRemaining - 1});
+    if (this.state.secondsRemaining <= 0) {
+      clearInterval(this.interval);
+    }
+  }  
+  render() {
+    const {
+      total,
+      days,
+      hours,
+      minutes,
+      seconds
+    } = this.getTimeRemaining(deadline);
+    return (
+       <span>BlueLabel en Blue Maps {total > 0 ? <span>lanceren over {days} dagen</span> : <span>zijn op 15 maart 2018 gelanceerd!</span>}</span>
+    );
+  }
+}
+
 class QApp extends React.Component {
     constructor() {
       super();
@@ -423,7 +484,6 @@ class QApp extends React.Component {
         data: dataCopy
       });
     }
-
     render() {
         return (
           <div>
@@ -454,6 +514,7 @@ class QApp extends React.Component {
     }
 }
 ReactDOM.render(<QApp />, document.getElementById("qa-app"));
+ReactDOM.render(<Counter />, document.getElementById("counter-app"));
 </script>
 </body></html>
     
