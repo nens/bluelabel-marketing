@@ -128,25 +128,45 @@ body {
   font-size: 30px;
 }
 
-#clockdiv > div{
+#clockdiv > div {
   padding: 10px;
   border-radius: 3px;
   background: #fff;
   display: inline-block;
 }
 
-#clockdiv div > span{
+#clockdiv div > span {
   padding: 15px;
   border-radius: 3px;
   background: #F6F9FC;
   display: inline-block;
 }
-
-.smalltext{
+.smalltext {
   color: #6978DF;
   padding-top: 5px;
   font-size: 16px;
 }
+
+@media (max-width: 320px) {
+  #clockdiv > div {
+    padding: 5px;
+  }
+  #clockdiv div > span {
+    padding: 5px;
+  }
+}
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+  #clockdiv > div {
+    padding: 10px;
+  }
+  #clockdiv div > span {
+    padding: 10px;
+  }
+}
+
+
+
+
 
 
 .counter-text {
