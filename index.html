@@ -20,9 +20,13 @@
         <div class="colxs12 colsm12 colmd12 collg12">
           <div class="logo"></div>    
           <div class="header-content">
-            <h1>Welkom op de BlueLabel infosite</h1>
+            <h1>Welkom op de BlueLabel infosite</h1>       
             <h4>BlueLabel informeert overheden, bedrijven en burgers
 over de risico’s van regenwateroverlast</h4>
+
+            <div class="btn-more-info" id="btn-more-info">
+              Meer informatie
+            </div>
             <div class="large-image"></div>
             <h5>Een initiatief van Achmea, Royal HaskoningDHV en Nelen &amp; Schuurmans</h5>
           </div>
@@ -34,21 +38,14 @@ over de risico’s van regenwateroverlast</h4>
   <div class="counter">
     <div class="container">
       <div class="row">
-        <div class="colxs6 colsm6 colmd6 collg6">
+        <div class="colxs12 colsm12 colmd12 collg12">
           <div class="counter-content">
             <div class="counter-text">
               <h4>Officiële lancering</h4>
-              <p><span id="counter-app" /></p>
+              <div><span id="counter-app" /></div>
             </div>
           </div>
         </div>
-        <div class="colxs6 colsm6 colmd6 collg6">
-          <div class="counter-button">
-            <div class="btn-more-info" id="btn-more-info">
-              Meer informatie
-            </div>
-          </div>
-        </div>        
       </div>
     </div>
   </div>  
@@ -130,6 +127,17 @@ over de risico’s van regenwateroverlast</h4>
   <div id="qa-app"></div>
 
 
+
+
+  <div class="partners-and-signup">
+    <div class="container">
+      <div class="row">
+        <div class="colxs12 colsm6 colmd6 collg6">
+          Signup
+        </div>
+      </div>
+    </div>
+  </div>
 
 
 
@@ -279,9 +287,34 @@ class Counter extends React.Component {
       minutes,
       seconds
     } = this.getTimeRemaining(deadline);
-    return (
-       <span>BlueLabel en Blue Maps {total > 0 ? <span>lanceren over {days} dagen</span> : <span>zijn op 15 maart 2018 gelanceerd!</span>}</span>
-    );
+
+    if (total > 0) {
+      return (
+        <div id="clockdiv">
+          <div>
+            <span className="days">{days}</span>
+            <div className="smalltext">Dagen</div>
+          </div>
+          <div>
+            <span className="hours">{hours}</span>
+            <div className="smalltext">Uren</div>
+          </div>
+          <div>
+            <span className="minutes">{minutes}</span>
+            <div className="smalltext">Minuten</div>
+          </div>
+          <div>
+            <span className="seconds">{seconds}</span>
+            <div className="smalltext">Seconden</div>
+          </div>
+        </div>
+      );    
+    }
+    else {
+      return (
+         <span>BlueLabel en Blue Maps zijn op 15 maart 2018 gelanceerd!</span>
+      );
+    }
   }
 }
 

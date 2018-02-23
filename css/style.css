@@ -116,6 +116,48 @@ body {
 
 
 
+
+
+
+
+#clockdiv{
+  color: #6978DF;
+  display: inline-block;
+  font-weight: 100;
+  text-align: center;
+  font-size: 30px;
+}
+
+#clockdiv > div{
+  padding: 10px;
+  border-radius: 3px;
+  background: #fff;
+  display: inline-block;
+}
+
+#clockdiv div > span{
+  padding: 15px;
+  border-radius: 3px;
+  background: #F6F9FC;
+  display: inline-block;
+}
+
+.smalltext{
+  color: #6978DF;
+  padding-top: 5px;
+  font-size: 16px;
+}
+
+
+.counter-text {
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
 .counter {
   background-color: #f6f9fc;
   min-height: 100px;
@@ -131,7 +173,7 @@ body {
   text-align: center;
 }
 .counter-text h4 {
-  margin: 25px 0 0 0;
+  margin: 25px 0 25px 0;
   font-size: 25px;
   font-weight: normal;
   color: #6875e2;
@@ -141,13 +183,6 @@ body {
   font-size: 16px;
   color: #6875e2;
   margin: 10px 0 35px 0;
-}
-.btn-more-info {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
 }
 .btn-more-info {
   width: 220px;
@@ -160,7 +195,7 @@ body {
   cursor: pointer;
   text-transform: uppercase;
   color: #6875e2;
-  margin: 10px;
+  margin: 10px 10px 20px 10px;
 }
 /* Smartphones (portrait)  */
 @media (max-width: 320px) {
@@ -370,7 +405,7 @@ body {
   margin: 20px 0 20px 0;
 }
 .qa-content {
-  padding: 30px;
+  padding: 40px;
 }
 .qa-content h1 {
   font-weight: normal;
@@ -409,7 +444,11 @@ body {
 
 
 
-
+.partners-and-signup {
+  border-top: 1px solid #80808036;
+  padding-top: 20px;
+  margin-top: -20px;
+}
 
 
 
