@@ -296,6 +296,12 @@ body {
   width: 20px;
 }
 
+
+#scrollToContact {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
 .progress-map {
   padding: 20px;
   background-color: #f2f6f9;
