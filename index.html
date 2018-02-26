@@ -362,27 +362,23 @@ class Counter extends React.Component {
     var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
     var days = Math.floor(t / (1000 * 60 * 60 * 24));
     return {
-      'total': t,
-      'days': days,
-      'hours': hours,
-      'minutes': minutes,
-      'seconds': seconds
+      total: t,
+      days: days,
+      hours: hours,
+      minutes: minutes,
+      seconds: seconds
     };
   }
   tick() {
-    this.setState({secondsRemaining: this.state.secondsRemaining - 1});
+    this.setState({ secondsRemaining: this.state.secondsRemaining - 1 });
     if (this.state.secondsRemaining <= 0) {
       clearInterval(this.interval);
     }
-  }  
+  }
   render() {
-    const {
-      total,
-      days,
-      hours,
-      minutes,
-      seconds
-    } = this.getTimeRemaining(deadline);
+    const { total, days, hours, minutes, seconds } = this.getTimeRemaining(
+      deadline
+    );
 
     if (total > 0) {
       return (
@@ -405,263 +401,583 @@ class Counter extends React.Component {
             <div className="smalltext">Seconden</div>
           </div>
         </div>
-      );    
-    }
-    else {
+      );
+    } else {
       return (
-         <span>BlueLabel en Blue Maps zijn op 15 maart 2018 gelanceerd!</span>
+        <span>BlueLabel en Blue Maps zijn op 15 maart 2018 gelanceerd!</span>
       );
     }
   }
 }
 
 class QApp extends React.Component {
-    constructor() {
-      super();
-      this.state = {
-        data: [
-          {
-            title: "Algemeen",
-            questions: [
-              {
-                id: 1,
-                open: false,
-                q: "Waarom is Achmea BlueLabel partner?",
-                a: <div>
-                    <p>Als van origine coöperatieve organisatie gelooft Achmea er sterk in om samen problemen op te lossen. Klimaatverandering is één van deze onderwerpen.</p><p>Achmea ziet de gevolgen van de klimaatverandering met name terugkomen in stijgende schade en overlast bij haar klanten. Om deze klanten te helpen te wapenen tegen de gevolgen van klimaatveranderingen en daarmee ervoor te zorgen dat de premies in de toekomst niet stijgen is Achmea BlueLabel partner geworden.</p>
-                    </div>
-              },
-              {
-                id: 2,
-                open: false,
-                q: "Waarom is Royal HaskoningDHV BlueLabel partner?",
-                a: <div>
-                  <p>Klimaatverandering en toenemende verstedelijking zorgen ervoor dat de samenleving voorbereid moet zijn op toenemende risico’s en overlast van onder andere extreme regenval. Bewustwording van deze risico’s is een belangrijke eerste stap in het verbeteren van de leefomgeving.</p><p>BlueLabel zorgt voor nauwkeurig inzicht op basis waarvan vervolgens maatregelen getroffen kunnen worden door overheden, bedrijven en burgers. Dat is onze drijfveer: <em>enhancing society together</em>.</p>                  
-                </div>
-              },
-              {
-                id: 3,
-                open: false,
-                q: "Waarom is Nelen & Schuurmans partner?",
-                a: <div>
+  constructor() {
+    super();
+    this.state = {
+      data: [
+        {
+          title: "Algemeen",
+          questions: [
+            {
+              id: 1,
+              open: false,
+              q: "Waarom is Achmea BlueLabel partner?",
+              a: (
+                <div>
                   <p>
-                    Nelen &amp; Schuurmans wil een bijdrage leveren aan een gezonde en duurzame leefomgeving door de best mogelijke informatie beschikbaar te stellen. Het doel van BlueLabel, nauwkeurig inzicht geven in de gevolgen van extreme neerslag aan overheden en burgers, past volledig in onze missie.                    
+                    Als van origine coöperatieve organisatie gelooft Achmea er
+                    sterk in om samen problemen op te lossen. Klimaatverandering
+                    is één van deze onderwerpen.
                   </p>
-                </div>                
-              },
-              {
-                id: 4,
-                open: false,
-                q: "Wat is het doel van BlueLabel?",
-                a: <div><p>Het uiteindelijke doel is drieledig: bewustwording, preventie en signalering van regenwateroverlast in en om de woning, bedrijfsgebouwen en infrastructuur. Door inzicht te bieden in risico willen we zowel de publieke sector, als bedrijven en huizenbezitters handelingsperspectief bieden om zich hier tegen te wapenen.</p></div>                
-              },
-              {
-                id: 5,
-                open: false,
-                q: "Waarom zijn de BlueLabel gestart?",
-                a: <div><p>Wij geloven in een aanpak die is gebaseerd op samenwerking en partnership. Door samen met consumenten en overheden maatschappelijke problemen, zoals klimaatverandering, aan te pakken kunnen wij meer bereiken dan alleen. Daarbij is goede informatie over regenwateroverlast op perceelniveau essentieel.</p></div>                
-              },
-              {
-                id: 6,
-                open: false,
-                q: "Wat is BlueLabel?",
-                a: <div><p>BlueLabel is een aansprekende manier om op perceelniveau aan te geven wat het risico is op regenwateroverlast. Dit risico moet voor iedereen begrijpelijk en uniform zijn weergegeven en een label blijkt daarbij effectief. Daarnaast geeft het BlueLabel niet alleen het risico weer, maar geeft ook aan wat de beste oplossing is om overlast te voorkomen of te beperken.</p></div>                
-              },
-              {
-                id: 7,
-                open: false,
-                q: "Wat heb ik aan BlueLabel?",
-                a: <div>
-                      <p>BlueLabel geeft inzicht in de knelpunten door regenwateroverlast binnen een gebied. BlueLabel biedt daarmee een handvat aan overheidsinstellingen zoals de gemeente, haar inwoners, bedrijven en instanties om aan de slag te gaan om de schade aan woning, tuin of bedrijf te voorkomen of te verminderen.</p>
-                    </div>
-              }              
-            ]
-          },
-          {
-            title: "Afnemers",
-            questions: [
-              {
-                id: 8,
-                open: false,
-                q: "Waarom is BlueLabel geschikt voor gemeenten?",
-                a: <div><p>Gemeenten kunnen BlueLabel perfect inzetten als communicatiemiddel naar hun burgers. Hierdoor wordt de burger door hun eigen gemeente geïnformeerd en daarmee bewust van het risico dat hij/zij loopt. Dit biedt de mogelijkheid om samen met burgers (op wijkniveau) na te denken over hoe in de toekomst de risico’s kunnen worden verkleind. Zowel door maatregelen die door de bewoners zelf worden genomen als maatregelen die de gemeenten gaan treffen.</p></div>
-              },
-              {
-                id: 9,
-                open: false,
-                q: "Wat is de relatie met de 'klimaat stresstest'?",
-                a: <div><p>Elke gemeente is verplicht om een stresstest uit te voeren voor 2019. De BlueMaps die binnen de service van BlueLabel worden geleverd zijn berekend met 3Di en vormen daarmee een zeer betrouwbare basis. De BlueLabels kunnen daarnaast zeer goed worden gebruikt voor deze stresstest en is beschikbaar op huis, wijk en stadsniveau. Wij bieden de mogelijkheid BlueLabel af te leiden van innundatie kaarten die zijn afgeleid met andere modellen. Neem contact met ons op om hier meer informatie over te krijgen.</p></div>
-              },
-              {
-                id: 10,
-                open: false,
-                q: "Wanneer ontvang ik BlueLabel?",
-                a: <div>
-                    <p>Neem vandaag nog <span onClick={() => {
-                      document.querySelector('#signup-section').scrollIntoView({behavior: 'smooth'});
-                      document.getElementById('mce-EMAIL').focus();
-                    }} id="scrollToContact">contact met ons op</span> en wij zorgen ervoor dat u binnen uw BlueLabel of BlueMap ontvangt.</p></div>
-              },
-              {
-                id: 11,
-                open: false,
-                q: "Kan ik als bedrijf ook BlueLabel gebruiken?",
-                a: <div><p>Jazeker! Neem daarvoor <span onClick={() => {
-                      document.querySelector('#signup-section').scrollIntoView({behavior: 'smooth'});
-                      document.getElementById('mce-EMAIL').focus();
-                    }} id="scrollToContact">contact op</span>. Dan kijken we samen hoe we dit voor u op maat kunnen inrichten.</p></div>
-              },
-              {
-                id: 12,
-                open: false,
-                q: "Wat moet ik doen als mijn huidige BlueLabel niet klopt?",
-                a: <div><p>Het BlueLabel wordt afgeleid uit een nauwkeurige berekening met een hydrologisch model en een vooraf gedefinieerde extreme bui. 
-                Het kan echter goed zijn dat deze bui nog niet eerder op en rondom uw perceel is voorgekomen en dat u mede daardoor niet eerder overlast hebt gehad. 
-                Door de klimaatverandering zullen extreme buien echter vaker voorkomen, en dat is de reden dat we met een dergelijke extreme bui rekenen. 
-                Belangrijk voor het BlueLabel is de laagste drempelhoogte van uw deur, kelderraam, of <a href="https://nl.wikipedia.org/wiki/Koekoek_(bouwkunde)" target="_blank">koekoek</a>. 
-                Deze hoogte wordt niet landelijk geregistreerd en is door ons ingeschat op basis van de ligging van het maaiveld rond uw woning. 
-                Als u van mening bent dat de gebruikte hoogte niet klopt dan kunt u de juiste hoogte aan ons doorgeven, zodat wij deze kunnen corrigeren</p>
-                <p><span onClick={() => {
-                      document.querySelector('#signup-section').scrollIntoView({behavior: 'smooth'});
-                      document.getElementById('mce-EMAIL').focus();
-                    }} id="scrollToContact">Klik hier voor contact</span></p></div>
-              },
-              {
-                id: 13,
-                open: false,
-                q: "Kan ik als consument/ inwoner ook BlueLabel gebruiken?",
-                a: <div>
-                      <p>We hopen op een later moment dit jaar dit ook direct aan consumenten aan te kunnen bieden. Heeft u interesse, <span onClick={() => {
-                      document.querySelector('#signup-section').scrollIntoView({behavior: 'smooth'});
-                      document.getElementById('mce-EMAIL').focus();
-                    }} id="scrollToContact">aarzel dan niet contact met ons op te nemen</span>.</p>
-                    </div>
-              },        
-              {
-                id: 14,
-                open: false,
-                q: "Heeft BlueLabel impact op de premie die ik als verzekerde moet betalen?",
-                a: <div><p>Op dit moment gebruiken alle verzekeraars al verschillende eigenschappen van huizen en hun locatie om de premie te berekenen. Bijvoorbeeld het type dak, oppervlak etc. Wij geloven dat BlueLabel daar een belangrijk element aan toevoegt; Achmea heeft hierin echter wel het standpunt ingenomen dat dit nooit ten koste mag gaan van het solidariteitsbeginsel.</p></div>
-              },
-              {
-                id: 15,
-                open: false,
-                q: "Heeft BlueLabel effect op de waarde van mijn huis?",
-                a: <div>De waarde van uw huis wordt door meerdere factoren bepaald. Wij verwachten niet dat BlueLabel veel impact op de waarde van uw huis zal hebben. Wel is het momenteel al zo dat als u als huiseigenaar last heeft van wateroverlast, u dit moet melden bij verkoop. En als potentiele koper wilt u wellicht goed worden geïnformeerd over het risico op wateroverlast. BlueLabel is vooralsnog vooral bedoeld om bewustzijn te creëren over hoe groot of klein de impact is van neerslag overlast op jouw woonhuis en tuin/ perceel.</div>
-              },
-              {
-                id: 16,
-                open: false,
-                q: "Is BlueLabel verplicht?",
-                a: <div>Nee, het is niet verplicht om een BlueLabel rapport te hebben. Wel moeten alle gemeenten voor 2019 inzicht te geven in de impact van extreme neerslag, de zogenaamde hemelwaterstresstest.</div>
-              },
-              {
-                id: 17,
-                open: false,
-                q: "Hoe helpt BlueLabel om concreet percelen preventief te beschermen tegen wateroverlast?",
-                a: <div>BlueLabel geeft naast inzicht in het risico ook een aantal tips hoe men het risico op wateroverlast kan verkleinen. Het is echter belangrijk te beseffen dat het wateroverlast niet altijd te voorkomen is met maatregelen op het perceel zelf. Het is daarom ook van belang om samen met de gemeenten op zoek te gaan naar de meest effectieve maatregelen. Neem daarvoor <span onClick={() => {
-                      document.querySelector('#signup-section').scrollIntoView({behavior: 'smooth'});
-                      document.getElementById('mce-EMAIL').focus();
-                    }} id="scrollToContact">contact met ons op</span>.</div>
-              }              
-            ]
-          },
-          {
-            title: "Technisch",
-            questions: [
-              {
-                id: 18,
-                open: false,
-                q: "Hoe worden de BlueMaps bepaald?",
-                a: <div>
-                      <p>Voor het afleiden van de BlueMaps worden 3Di modellen gebruikt. Deze modellen zijn gebaseerd op de meest recente versie van de Actuele Hoogtekaart van Nederland en de landgebruikskaart (BGT).</p>
-                    </div>
-              },
-              {
-                id: 19,
-                open: false,
-                q: "Hoe wordt het BlueLabel bepaald?",
-                a: <div><p>BlueLabel is gebaseerd op het verschil tussen de waterdiepte op het perceel en de drempelhoogte, waarbij ook rekening wordt gehouden met de bui intensiteit. De drempelhoogte wordt niet landelijk geregistreerd en is door ons ingeschat op basis van de ligging van het maaiveld rond uw woning. Als u van mening bent dat de gebruikte hoogte niet klopt dan kunt de juiste hoogte aan ons doorgeven, zodat wij deze kunnen corrigeren. <span onClick={() => {
-                      document.querySelector('#signup-section').scrollIntoView({behavior: 'smooth'});
-                      document.getElementById('mce-EMAIL').focus();
-                    }} id="scrollToContact">Klik hier voor contact</span>.</p></div>
-              },
-              {
-                id: 20,
-                open: false,
-                q: "Welke neerslag bui is gebruikt?",
-                a: <div><p>Er is gewerkt met verschillende extreme buien, welke bui dat precies is hangt af van de gemeente. Deze informatie wordt uiteraard goed geregistreerd. Mocht u daar meer informatie over willen ontvangen neem dan contact met ons op. <span onClick={() => {
-                      document.querySelector('#signup-section').scrollIntoView({behavior: 'smooth'});
-                      document.getElementById('mce-EMAIL').focus();
-                    }} id="scrollToContact">Klik hier voor contact</span>.</p></div>
-              },
-              {
-                id: 21,
-                open: false,
-                q: "Is de riolering meegenomen?",
-                a: <div><p>Een aantal gemeenten heeft een model waarin de riolering is meegenomen. Voor andere gemeenten is dat niet het geval en daar hebben we rekening mee gehouden in het bepalen van de BlueMaps. Uiteraard is het wel mogelijk om het model uit te breiden met een rioleringsmodel. <span onClick={() => {
-                      document.querySelector('#signup-section').scrollIntoView({behavior: 'smooth'});
-                      document.getElementById('mce-EMAIL').focus();
-                    }} id="scrollToContact">Klik hier voor contact</span>.</p></div>
-              },
-              {
-                id: 22,
-                open: false,
-                q: "Ik heb al een wateroverlastkaart, kan ik die gebruiken?",
-                a: <div><p>Jazeker, u kunt ook BlueLabels afleiden van een wateroverlastkaart die met een ander model is berekend. Om dat goed te kunnen doen hebben we wel een aantal basisgegevens nodig over hoe de wateroverlastkaart is afgeleid. Neem vooral contact met ons op zodat we dit op maat kunnen afstemmen. <span onClick={() => {
-                      document.querySelector('#signup-section').scrollIntoView({behavior: 'smooth'});
-                      document.getElementById('mce-EMAIL').focus();
-                    }} id="scrollToContact">Klik hier voor contact</span>.</p></div>
-              }
-            ]
-          }          
-        ]
-      };
-    }
-    handleQuestionClick(id) {
-      const dataCopy = this.state.data.slice();
+                  <p>
+                    Achmea ziet de gevolgen van de klimaatverandering met name
+                    terugkomen in stijgende schade en overlast bij haar klanten.
+                    Om deze klanten te helpen te wapenen tegen de gevolgen van
+                    klimaatveranderingen en daarmee ervoor te zorgen dat de
+                    premies in de toekomst niet stijgen is Achmea BlueLabel
+                    partner geworden.
+                  </p>
+                </div>
+              )
+            },
+            {
+              id: 2,
+              open: false,
+              q: "Waarom is Royal HaskoningDHV BlueLabel partner?",
+              a: (
+                <div>
+                  <p>
+                    Klimaatverandering en toenemende verstedelijking zorgen
+                    ervoor dat de samenleving voorbereid moet zijn op toenemende
+                    risico’s en overlast van onder andere extreme regenval.
+                    Bewustwording van deze risico’s is een belangrijke eerste
+                    stap in het verbeteren van de leefomgeving.
+                  </p>
+                  <p>
+                    BlueLabel zorgt voor nauwkeurig inzicht op basis waarvan
+                    vervolgens maatregelen getroffen kunnen worden door
+                    overheden, bedrijven en burgers. Dat is onze drijfveer:{" "}
+                    <em>enhancing society together</em>.
+                  </p>
+                </div>
+              )
+            },
+            {
+              id: 3,
+              open: false,
+              q: "Waarom is Nelen & Schuurmans partner?",
+              a: (
+                <div>
+                  <p>
+                    Nelen &amp; Schuurmans wil een bijdrage leveren aan een
+                    gezonde en duurzame leefomgeving door de best mogelijke
+                    informatie beschikbaar te stellen. Het doel van BlueLabel,
+                    nauwkeurig inzicht geven in de gevolgen van extreme neerslag
+                    aan overheden en burgers, past volledig in onze missie.
+                  </p>
+                </div>
+              )
+            },
+            {
+              id: 4,
+              open: false,
+              q: "Wat is het doel van BlueLabel?",
+              a: (
+                <div>
+                  <p>
+                    Het uiteindelijke doel is drieledig: bewustwording,
+                    preventie en signalering van regenwateroverlast in en om de
+                    woning, bedrijfsgebouwen en infrastructuur. Door inzicht te
+                    bieden in risico willen we zowel de publieke sector, als
+                    bedrijven en huizenbezitters handelingsperspectief bieden om
+                    zich hier tegen te wapenen.
+                  </p>
+                </div>
+              )
+            },
+            {
+              id: 5,
+              open: false,
+              q: "Waarom zijn de BlueLabel gestart?",
+              a: (
+                <div>
+                  <p>
+                    Wij geloven in een aanpak die is gebaseerd op samenwerking
+                    en partnership. Door samen met consumenten en overheden
+                    maatschappelijke problemen, zoals klimaatverandering, aan te
+                    pakken kunnen wij meer bereiken dan alleen. Daarbij is goede
+                    informatie over regenwateroverlast op perceelniveau
+                    essentieel.
+                  </p>
+                </div>
+              )
+            },
+            {
+              id: 6,
+              open: false,
+              q: "Wat is BlueLabel?",
+              a: (
+                <div>
+                  <p>
+                    BlueLabel is een aansprekende manier om op perceelniveau aan
+                    te geven wat het risico is op regenwateroverlast. Dit risico
+                    moet voor iedereen begrijpelijk en uniform zijn weergegeven
+                    en een label blijkt daarbij effectief. Daarnaast geeft het
+                    BlueLabel niet alleen het risico weer, maar geeft ook aan
+                    wat de beste oplossing is om overlast te voorkomen of te
+                    beperken.
+                  </p>
+                </div>
+              )
+            },
+            {
+              id: 7,
+              open: false,
+              q: "Wat heb ik aan BlueLabel?",
+              a: (
+                <div>
+                  <p>
+                    BlueLabel geeft inzicht in de knelpunten door
+                    regenwateroverlast binnen een gebied. BlueLabel biedt
+                    daarmee een handvat aan overheidsinstellingen zoals de
+                    gemeente, haar inwoners, bedrijven en instanties om aan de
+                    slag te gaan om de schade aan woning, tuin of bedrijf te
+                    voorkomen of te verminderen.
+                  </p>
+                </div>
+              )
+            }
+          ]
+        },
+        {
+          title: "Afnemers",
+          questions: [
+            {
+              id: 8,
+              open: false,
+              q: "Waarom is BlueLabel geschikt voor gemeenten?",
+              a: (
+                <div>
+                  <p>
+                    Gemeenten kunnen BlueLabel perfect inzetten als
+                    communicatiemiddel naar hun burgers. Hierdoor wordt de
+                    burger door hun eigen gemeente geïnformeerd en daarmee
+                    bewust van het risico dat hij/zij loopt. Dit biedt de
+                    mogelijkheid om samen met burgers (op wijkniveau) na te
+                    denken over hoe in de toekomst de risico’s kunnen worden
+                    verkleind. Zowel door maatregelen die door de bewoners zelf
+                    worden genomen als maatregelen die de gemeenten gaan
+                    treffen.
+                  </p>
+                </div>
+              )
+            },
+            {
+              id: 9,
+              open: false,
+              q: "Wat is de relatie met de 'klimaat stresstest'?",
+              a: (
+                <div>
+                  <p>
+                    Elke gemeente is verplicht om een stresstest uit te voeren
+                    voor 2019. De BlueMaps die binnen de service van BlueLabel
+                    worden geleverd zijn berekend met 3Di en vormen daarmee een
+                    zeer betrouwbare basis. De BlueLabels kunnen daarnaast zeer
+                    goed worden gebruikt voor deze stresstest en is beschikbaar
+                    op huis, wijk en stadsniveau. Wij bieden de mogelijkheid
+                    BlueLabel af te leiden van innundatie kaarten die zijn
+                    afgeleid met andere modellen. Neem contact met ons op om
+                    hier meer informatie over te krijgen.
+                  </p>
+                </div>
+              )
+            },
+            {
+              id: 10,
+              open: false,
+              q: "Wanneer ontvang ik BlueLabel?",
+              a: (
+                <div>
+                  <p>
+                    Neem vandaag nog{" "}
+                    <span
+                      onClick={() => {
+                        document
+                          .querySelector("#signup-section")
+                          .scrollIntoView({ behavior: "smooth" });
+                        document.getElementById("mce-EMAIL").focus();
+                      }}
+                      id="scrollToContact"
+                    >
+                      contact met ons op
+                    </span>{" "}
+                    en wij zorgen ervoor dat u binnen uw BlueLabel of BlueMap
+                    ontvangt.
+                  </p>
+                </div>
+              )
+            },
+            {
+              id: 11,
+              open: false,
+              q: "Kan ik als bedrijf ook BlueLabel gebruiken?",
+              a: (
+                <div>
+                  <p>
+                    Jazeker! Neem daarvoor{" "}
+                    <span
+                      onClick={() => {
+                        document
+                          .querySelector("#signup-section")
+                          .scrollIntoView({ behavior: "smooth" });
+                        document.getElementById("mce-EMAIL").focus();
+                      }}
+                      id="scrollToContact"
+                    >
+                      contact op
+                    </span>. Dan kijken we samen hoe we dit voor u op maat
+                    kunnen inrichten.
+                  </p>
+                </div>
+              )
+            },
+            {
+              id: 12,
+              open: false,
+              q: "Wat moet ik doen als mijn huidige BlueLabel niet klopt?",
+              a: (
+                <div>
+                  <p>
+                    Het BlueLabel wordt afgeleid uit een nauwkeurige berekening
+                    met een hydrologisch model en een vooraf gedefinieerde
+                    extreme bui. Het kan echter goed zijn dat deze bui nog niet
+                    eerder op en rondom uw perceel is voorgekomen en dat u mede
+                    daardoor niet eerder overlast hebt gehad. Door de
+                    klimaatverandering zullen extreme buien echter vaker
+                    voorkomen, en dat is de reden dat we met een dergelijke
+                    extreme bui rekenen. Belangrijk voor het BlueLabel is de
+                    laagste drempelhoogte van uw deur, kelderraam, of{" "}
+                    <a
+                      href="https://nl.wikipedia.org/wiki/Koekoek_(bouwkunde)"
+                      target="_blank"
+                    >
+                      koekoek
+                    </a>. Deze hoogte wordt niet landelijk geregistreerd en is
+                    door ons ingeschat op basis van de ligging van het maaiveld
+                    rond uw woning. Als u van mening bent dat de gebruikte
+                    hoogte niet klopt dan kunt u de juiste hoogte aan ons
+                    doorgeven, zodat wij deze kunnen corrigeren
+                  </p>
+                  <p>
+                    <span
+                      onClick={() => {
+                        document
+                          .querySelector("#signup-section")
+                          .scrollIntoView({ behavior: "smooth" });
+                        document.getElementById("mce-EMAIL").focus();
+                      }}
+                      id="scrollToContact"
+                    >
+                      Klik hier voor contact
+                    </span>
+                  </p>
+                </div>
+              )
+            },
+            {
+              id: 13,
+              open: false,
+              q: "Kan ik als consument/ inwoner ook BlueLabel gebruiken?",
+              a: (
+                <div>
+                  <p>
+                    We hopen op een later moment dit jaar dit ook direct aan
+                    consumenten aan te kunnen bieden. Heeft u interesse,{" "}
+                    <span
+                      onClick={() => {
+                        document
+                          .querySelector("#signup-section")
+                          .scrollIntoView({ behavior: "smooth" });
+                        document.getElementById("mce-EMAIL").focus();
+                      }}
+                      id="scrollToContact"
+                    >
+                      aarzel dan niet contact met ons op te nemen
+                    </span>.
+                  </p>
+                </div>
+              )
+            },
+            {
+              id: 14,
+              open: false,
+              q:
+                "Heeft BlueLabel impact op de premie die ik als verzekerde moet betalen?",
+              a: (
+                <div>
+                  <p>
+                    Op dit moment gebruiken alle verzekeraars al verschillende
+                    eigenschappen van huizen en hun locatie om de premie te
+                    berekenen. Bijvoorbeeld het type dak, oppervlak etc. Wij
+                    geloven dat BlueLabel daar een belangrijk element aan
+                    toevoegt; Achmea heeft hierin echter wel het standpunt
+                    ingenomen dat dit nooit ten koste mag gaan van het
+                    solidariteitsbeginsel.
+                  </p>
+                </div>
+              )
+            },
+            {
+              id: 15,
+              open: false,
+              q: "Heeft BlueLabel effect op de waarde van mijn huis?",
+              a: (
+                <div>
+                  De waarde van uw huis wordt door meerdere factoren bepaald.
+                  Wij verwachten niet dat BlueLabel veel impact op de waarde van
+                  uw huis zal hebben. Wel is het momenteel al zo dat als u als
+                  huiseigenaar last heeft van wateroverlast, u dit moet melden
+                  bij verkoop. En als potentiele koper wilt u wellicht goed
+                  worden geïnformeerd over het risico op wateroverlast.
+                  BlueLabel is vooralsnog vooral bedoeld om bewustzijn te
+                  creëren over hoe groot of klein de impact is van neerslag
+                  overlast op jouw woonhuis en tuin/ perceel.
+                </div>
+              )
+            },
+            {
+              id: 16,
+              open: false,
+              q: "Is BlueLabel verplicht?",
+              a: (
+                <div>
+                  Nee, het is niet verplicht om een BlueLabel rapport te hebben.
+                  Wel moeten alle gemeenten voor 2019 inzicht te geven in de
+                  impact van extreme neerslag, de zogenaamde
+                  hemelwaterstresstest.
+                </div>
+              )
+            },
+            {
+              id: 17,
+              open: false,
+              q:
+                "Hoe helpt BlueLabel om concreet percelen preventief te beschermen tegen wateroverlast?",
+              a: (
+                <div>
+                  BlueLabel geeft naast inzicht in het risico ook een aantal
+                  tips hoe men het risico op wateroverlast kan verkleinen. Het
+                  is echter belangrijk te beseffen dat het wateroverlast niet
+                  altijd te voorkomen is met maatregelen op het perceel zelf.
+                  Het is daarom ook van belang om samen met de gemeenten op zoek
+                  te gaan naar de meest effectieve maatregelen. Neem daarvoor{" "}
+                  <span
+                    onClick={() => {
+                      document
+                        .querySelector("#signup-section")
+                        .scrollIntoView({ behavior: "smooth" });
+                      document.getElementById("mce-EMAIL").focus();
+                    }}
+                    id="scrollToContact"
+                  >
+                    contact met ons op
+                  </span>.
+                </div>
+              )
+            }
+          ]
+        },
+        {
+          title: "Technisch",
+          questions: [
+            {
+              id: 18,
+              open: false,
+              q: "Hoe worden de BlueMaps bepaald?",
+              a: (
+                <div>
+                  <p>
+                    Voor het afleiden van de BlueMaps worden 3Di modellen
+                    gebruikt. Deze modellen zijn gebaseerd op de meest recente
+                    versie van de Actuele Hoogtekaart van Nederland en de
+                    landgebruikskaart (BGT).
+                  </p>
+                </div>
+              )
+            },
+            {
+              id: 19,
+              open: false,
+              q: "Hoe wordt het BlueLabel bepaald?",
+              a: (
+                <div>
+                  <p>
+                    BlueLabel is gebaseerd op het verschil tussen de waterdiepte
+                    op het perceel en de drempelhoogte, waarbij ook rekening
+                    wordt gehouden met de bui intensiteit. De drempelhoogte
+                    wordt niet landelijk geregistreerd en is door ons ingeschat
+                    op basis van de ligging van het maaiveld rond uw woning. Als
+                    u van mening bent dat de gebruikte hoogte niet klopt dan
+                    kunt de juiste hoogte aan ons doorgeven, zodat wij deze
+                    kunnen corrigeren.{" "}
+                    <span
+                      onClick={() => {
+                        document
+                          .querySelector("#signup-section")
+                          .scrollIntoView({ behavior: "smooth" });
+                        document.getElementById("mce-EMAIL").focus();
+                      }}
+                      id="scrollToContact"
+                    >
+                      Klik hier voor contact
+                    </span>.
+                  </p>
+                </div>
+              )
+            },
+            {
+              id: 20,
+              open: false,
+              q: "Welke neerslag bui is gebruikt?",
+              a: (
+                <div>
+                  <p>
+                    Er is gewerkt met verschillende extreme buien, welke bui dat
+                    precies is hangt af van de gemeente. Deze informatie wordt
+                    uiteraard goed geregistreerd. Mocht u daar meer informatie
+                    over willen ontvangen neem dan contact met ons op.{" "}
+                    <span
+                      onClick={() => {
+                        document
+                          .querySelector("#signup-section")
+                          .scrollIntoView({ behavior: "smooth" });
+                        document.getElementById("mce-EMAIL").focus();
+                      }}
+                      id="scrollToContact"
+                    >
+                      Klik hier voor contact
+                    </span>.
+                  </p>
+                </div>
+              )
+            },
+            {
+              id: 21,
+              open: false,
+              q: "Is de riolering meegenomen?",
+              a: (
+                <div>
+                  <p>
+                    Een aantal gemeenten heeft een model waarin de riolering is
+                    meegenomen. Voor andere gemeenten is dat niet het geval en
+                    daar hebben we rekening mee gehouden in het bepalen van de
+                    BlueMaps. Uiteraard is het wel mogelijk om het model uit te
+                    breiden met een rioleringsmodel.{" "}
+                    <span
+                      onClick={() => {
+                        document
+                          .querySelector("#signup-section")
+                          .scrollIntoView({ behavior: "smooth" });
+                        document.getElementById("mce-EMAIL").focus();
+                      }}
+                      id="scrollToContact"
+                    >
+                      Klik hier voor contact
+                    </span>.
+                  </p>
+                </div>
+              )
+            },
+            {
+              id: 22,
+              open: false,
+              q: "Ik heb al een wateroverlastkaart, kan ik die gebruiken?",
+              a: (
+                <div>
+                  <p>
+                    Jazeker, u kunt ook BlueLabels afleiden van een
+                    wateroverlastkaart die met een ander model is berekend. Om
+                    dat goed te kunnen doen hebben we wel een aantal
+                    basisgegevens nodig over hoe de wateroverlastkaart is
+                    afgeleid. Neem vooral contact met ons op zodat we dit op
+                    maat kunnen afstemmen.{" "}
+                    <span
+                      onClick={() => {
+                        document
+                          .querySelector("#signup-section")
+                          .scrollIntoView({ behavior: "smooth" });
+                        document.getElementById("mce-EMAIL").focus();
+                      }}
+                      id="scrollToContact"
+                    >
+                      Klik hier voor contact
+                    </span>.
+                  </p>
+                </div>
+              )
+            }
+          ]
+        }
+      ]
+    };
+  }
+  handleQuestionClick(id) {
+    const dataCopy = this.state.data.slice();
 
-      dataCopy.map(d => {
-        return d.questions.map(q => {
-          if (q.id === id) {
-            q.open = !q.open;
-          }
-          return q;
-        });
+    dataCopy.map(d => {
+      return d.questions.map(q => {
+        if (q.id === id) {
+          q.open = !q.open;
+        }
+        return q;
       });
+    });
 
-      this.setState({
-        data: dataCopy
-      });
-    }
-    render() {
-        return (
-          <div>
-            {this.state.data.map((category, i) => {
-              return (
-                <div key={i} className="q-and-a">
-                  <div className="container">
-                    <div className="row">
-                      <div className="colxs12 colsm12 colmd12 collg12 qa-content">
-                        <h1>Vaakgestelde vragen > {category.title}</h1>
-                        {category.questions.map((qa, j) => {
-                          return (
-                            <div key={j} className="question-wrapper">
-                              {qa.open ? <div className="openClose">-</div> : <div className="openClose">+</div>}
-                              <div className="qa-question" onClick={() => this.handleQuestionClick(qa.id)}>{qa.q}</div>
-                              {qa.open ? <div className="qa-answer animated fadeInDown">{qa.a}</div> : null}
+    this.setState({
+      data: dataCopy
+    });
+  }
+  render() {
+    return (
+      <div>
+        {this.state.data.map((category, i) => {
+          return (
+            <div key={i} className="q-and-a">
+              <div className="container">
+                <div className="row">
+                  <div className="colxs12 colsm12 colmd12 collg12 qa-content">
+                    <h1>Vaakgestelde vragen > {category.title}</h1>
+                    {category.questions.map((qa, j) => {
+                      return (
+                        <div key={j} className="question-wrapper">
+                          {qa.open ? (
+                            <div className="openClose">-</div>
+                          ) : (
+                            <div className="openClose">+</div>
+                          )}
+                          <div
+                            className="qa-question"
+                            onClick={() => this.handleQuestionClick(qa.id)}
+                          >
+                            {qa.q}
+                          </div>
+                          {qa.open ? (
+                            <div className="qa-answer animated fadeInDown">
+                              {qa.a}
                             </div>
-                          );
-                        })}
-                      </div>
-                    </div>
+                          ) : null}
+                        </div>
+                      );
+                    })}
                   </div>
-                </div>              
-              );
-            })}
-          </div>
-        );
-    }
+                </div>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    );
+  }
 }
 ReactDOM.render(<QApp />, document.getElementById("qa-app"));
 ReactDOM.render(<Counter />, document.getElementById("counter-app"));
