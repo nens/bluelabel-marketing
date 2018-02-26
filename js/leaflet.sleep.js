@@ -14,7 +14,7 @@ L.Control.SleepMapControl = L.Control.extend({
 
   options: {
     position: 'topright',
-    prompt: 'disable map',
+    prompt: 'Kaart uitschakelen',
     styles: {
       'backgroundColor': 'white',
       'padding': '5px',
