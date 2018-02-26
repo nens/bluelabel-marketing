@@ -295,12 +295,14 @@ var bluelabelmap = L.map("map", {
 
 // Light background layer (no labels)
 L.tileLayer(
-  "https://cartodb-basemaps-b.global.ssl.fastly.net/light_nolabels/{z}/{x}/{y}.png"
+  // "https://cartodb-basemaps-b.global.ssl.fastly.net/light_nolabels/{z}/{x}/{y}.png"
+  "https://cartodb-basemaps-d.global.ssl.fastly.net/rastertiles/voyager_nolabels/{z}/{x}/{y}.png"
 ).addTo(bluelabelmap);
 
 // Blue label progress layer
 L.tileLayer(
-  "https://cartocdn-ashbu.global.ssl.fastly.net/nens/api/v1/map/11038975af9b28d96d4170907fee4cfc:1518171433268/0/{z}/{x}/{y}.png",
+  // "https://cartocdn-ashbu.global.ssl.fastly.net/nens/api/v1/map/11038975af9b28d96d4170907fee4cfc:1518171433268/0/{z}/{x}/{y}.png",
+  "https://cartocdn-ashbu_d.global.ssl.fastly.net/nens/api/v1/map/nens@5b9785d0@bbcdd309320f03c8a408e45630133a36:1519401497863/1/{z}/{x}/{y}.png",
   {}
 ).addTo(bluelabelmap);
 
