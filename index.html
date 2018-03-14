@@ -94,7 +94,7 @@
       <div class="row">
         <div class="colxs12 colsm6 colmd6 collg6 tekst">
           <p>BlueLabel is een digitale service, die inzicht geeft in de impact van regenwateroverlast op onroerend goed, zoals huizen en bedrijfsgebouwen alsmede wegen en andere infrastructuur. In juli 2018 zijn alle adressen in Nederland voorzien van een BlueLabel.</p>
-          <p>Na het invoeren van het adres ontvangt u het BlueLabel van het adres met daarbij een toelichting. Deze digitale service wordt nu ontwikkeld voor heel Nederland. In een vervolgfase werken wij aan de uitbouw naar andere klimaat variabelen die een risico kunnen opleveren zoals hitte, droogte en andere vormen van overstroming.</p>
+          <p>Na het invoeren van het adres ontvangt u het BlueLabel van het adres met daarbij een toelichting. Deze digitale service wordt nu ontwikkeld voor heel Nederland. In een vervolgfase werken wij aan de uitbouw naar andere klimaatvariabelen die een risico kunnen opleveren zoals hitte, droogte en andere vormen van overstroming.</p>
         </div>
         <div class="colxs12 colsm6 colmd6 collg6 afbeelding">
           <img src="images/afbeelding-bluelabel.jpg" />
@@ -330,7 +330,6 @@ L.tileLayer(
 
 // Blue label progress layer
 L.tileLayer(
-  // "https://cartocdn-ashbu.global.ssl.fastly.net/nens/api/v1/map/11038975af9b28d96d4170907fee4cfc:1518171433268/0/{z}/{x}/{y}.png",
   "https://cartocdn-ashbu_d.global.ssl.fastly.net/nens/api/v1/map/nens@5b9785d0@bbcdd309320f03c8a408e45630133a36:1519401497863/1/{z}/{x}/{y}.png",
   {}
 ).addTo(bluelabelmap);
@@ -374,7 +373,7 @@ btnGoToMap.onclick = function(e) {
 
 
 <script type="text/babel">
-const deadline = "Sat Mar 15 2018 17:00:00 GMT+0100 (CET)";
+const deadline = "Sat Mar 27 2018 17:00:00 GMT+0100 (CET)";
 
 class Counter extends React.Component {
   constructor() {
@@ -453,21 +452,19 @@ class QApp extends React.Component {
             {
               id: 1,
               open: false,
-              q: "Waarom is Achmea BlueLabel partner?",
+              q: "Waarom is Achmea partner van BlueLabel?",
               a: (
                 <div>
                   <p>
-                    Als van origine coöperatieve organisatie gelooft Achmea er
-                    sterk in om samen problemen op te lossen. Klimaatverandering
-                    is één van deze onderwerpen.
+                    Als coöperatieve organisatie gelooft Achmea er
+                    sterk in om problemen samen aan te pakken. Klimaatverandering
+                    is één van die onderwerpen.
                   </p>
                   <p>
                     Achmea ziet de gevolgen van de klimaatverandering met name
                     terugkomen in stijgende schade en overlast bij haar klanten.
-                    Om deze klanten te helpen te wapenen tegen de gevolgen van
-                    klimaatveranderingen en daarmee ervoor te zorgen dat de
-                    premies in de toekomst niet stijgen is Achmea BlueLabel
-                    partner geworden.
+                    Om klanten te helpen zich hiertegen te wapenen is Achmea partner 
+                    van BlueLabel partner geworden.
                   </p>
                 </div>
               )
@@ -475,7 +472,7 @@ class QApp extends React.Component {
             {
               id: 2,
               open: false,
-              q: "Waarom is Royal HaskoningDHV BlueLabel partner?",
+              q: "Waarom is Royal HaskoningDHV partner van BlueLabel?",
               a: (
                 <div>
                   <p>
@@ -497,7 +494,7 @@ class QApp extends React.Component {
             {
               id: 3,
               open: false,
-              q: "Waarom is Nelen & Schuurmans partner?",
+              q: "Waarom is Nelen & Schuurmans partner van BlueLabel?",
               a: (
                 <div>
                   <p>
