@@ -6,7 +6,7 @@ body {
 }
 
 .logo {
-  background-image: url("../images/blue-label-logo.svg");
+  background-image: url("../images/logo.svg");
   background-repeat: no-repeat;
   width: 250px;
   height: 100px;
@@ -16,38 +16,61 @@ body {
 /* Smartphones (portrait)  */
 @media (max-width: 320px) {
   .logo {
-    width: 150px;
+    width: 100px;
   }
 }
 @media only screen and (min-width: 320px) and (max-width: 480px) {
   .logo {
+    width: 130px;
+  }
+}
+@media (min-width: 480px) {
+  .logo {
     width: 150px;
   }
 }
-/* Tablets (portrait)  */
 @media (min-width: 768px) {
   .logo {
-    width: 250px;
+    width: 150px;
   }
 }
 @media (min-width: 992px) {
   .logo {
-    width: 300px;
+    width: 170px;
   }
 }
 @media (min-width: 1200px) {
   .logo {
-    width: 320px;
+    width: 200px;
   }
 }
 
 .header {
   padding-top: 20px;
-  min-height: 500px;
+  min-height: 100px;
+
 }
-.gradient {
-  background-image: linear-gradient(18deg, #2d60a8 4%, #232e66 80%);
+
+.ankeiler {
+  background-image: url("../images/rain.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: right;
+  min-height: 550px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-radius: 50px;
+  margin: 30px;
 }
+.ankeiler h1 {
+  font-weight: lighter;
+  font-family: "Signika";
+  font-size: 2em;
+  color: #fff;
+  margin: 50px;
+}
+
 
 .header-content {
   display: flex;
@@ -55,12 +78,10 @@ body {
   align-items: center;
   text-align: center;
   flex-direction: column;
+
 }
 .header-content .large-image {
-  background-image: url("../images/BlueLabelSigning.jpg");
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
+
   width: 90%;
   height: 300px;
   margin: 0 0 20px 0;
@@ -112,7 +133,6 @@ body {
 }
 
 #clockdiv {
-  color: #6978df;
   display: inline-block;
   font-weight: 100;
   text-align: center;
@@ -120,20 +140,24 @@ body {
 }
 
 #clockdiv > div {
-  padding: 10px;
+  padding: 0 10px 10px 10px;
   border-radius: 3px;
-  background: #fff;
+  margin: 0 20px 20px 20px;
   display: inline-block;
 }
 
 #clockdiv div > span {
+  color: #A83034;
+  font-weight: bolder;
   padding: 15px;
-  border-radius: 3px;
-  background: #f6f9fc;
+  border-radius: 100px;
+  background: #fff;
   display: inline-block;
+  width: 40px;
+  height: 40px;
 }
 .smalltext {
-  color: #6978df;
+  color: #fff;
   padding-top: 5px;
   font-size: 16px;
 }
@@ -156,19 +180,23 @@ body {
 }
 
 .counter-text {
-  justify-content: center;
+
+}
+
+.counter {
+  min-height: 100px;
+  border-bottom: 1px solid #d1d1d1;
+}
+#counter-app-wrapper {
+  background-color: #0185A6;
+  border-radius: 50px;
+    justify-content: center;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-
-.counter {
-  background-color: #f6f9fc;
-  min-height: 100px;
-  border-bottom: 1px solid #d1d1d1;
-}
-
 .counter-content {
+
   padding: 30px;
 }
 .counter-button {
@@ -180,29 +208,29 @@ body {
   margin: 25px 0 25px 0;
   font-size: 25px;
   font-weight: normal;
-  color: #6875e2;
+  color: #fff;
 }
 .counter-text p {
   font-weight: lighter;
   font-size: 16px;
-  color: #6875e2;
+  color: #fff;
   margin: 10px 0 35px 0;
 }
 .btn-more-info {
-  width: 220px;
-  height: 50px;
-  background: #ffffff;
+  width: 150px;
+  height: 40px;
+  background: #CC0000;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
   display: flex;
+  border-radius: 20px;
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  text-transform: uppercase;
-  color: #6875e2;
-  margin: 10px 10px 20px 10px;
+  color: #fff;
+  margin-left: 50px;
 }
-/* Smartphones (portrait)  */
-@media (max-width: 320px) {
+
+/*@media (max-width: 320px) {
   .btn-more-info {
     width: 220px;
     height: 50px;
@@ -221,7 +249,6 @@ body {
     height: 60px;
   }
 }
-/* Tablets (portrait)  */
 @media (min-width: 768px) {
   .btn-more-info {
     width: 220px;
@@ -240,7 +267,7 @@ body {
     height: 50px;
   }
 }
-
+*/
 .curious .curious-content {
   display: flex;
   justify-content: center;

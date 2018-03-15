@@ -15,30 +15,23 @@
 </head>
 
 <body>
-  <div class="header">
+  <div class="gradient header">
     <div class="container">
       <div class="row">
         <div class="colxs12 colsm12 colmd12 collg12">
           <div class="logo"></div>    
+          <div class="header-content">
+            <h1>BlueLabel informeert overheden, bedrijven en burgers over de risico’s van regenwateroverlast</h1>
 
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-  <div class="ankeiler">
-    <div class="container">
-      <div class="row">
-        <div class="colxs12 colsm12 colmd12 collg12">
-          <h1>BlueLabel informeert overheden, bedrijven en burgers over de risico’s van regenwateroverlast</h1>
             <div class="btn-more-info" id="btn-more-info">
-              meer info
+              Interesse in BlueLabel?
             </div>
+            <div class="large-image"></div>
+            <h5>Een initiatief van Achmea, Royal HaskoningDHV en Nelen &amp; Schuurmans</h5>
+          </div>
         </div>
       </div>
     </div>
-    
   </div>
 
   <div class="counter">
@@ -47,9 +40,8 @@
         <div class="colxs12 colsm12 colmd12 collg12">
           <div class="counter-content">
             <div class="counter-text">
-              <div id="counter-app-wrapper">
-                <span id="counter-app" />
-              </div>
+              <h4>Officiële lancering</h4>
+              <div><span id="counter-app" /></div>
             </div>
           </div>
         </div>
@@ -422,8 +414,7 @@ class Counter extends React.Component {
     if (total > 0) {
       return (
         <div id="clockdiv">
-          <h4>Officiële lancering</h4>
-          <p>BlueLabel lanceert op 27 maart 2018</p>
+          <p>BlueLabel lanceert op 15 maart 2018</p>
           <div>
             <span className="days">{days}</span>
             <div className="smalltext">Dagen</div>
@@ -435,6 +426,10 @@ class Counter extends React.Component {
           <div>
             <span className="minutes">{minutes}</span>
             <div className="smalltext">Minuten</div>
+          </div>
+          <div>
+            <span className="seconds">{seconds}</span>
+            <div className="smalltext">Seconden</div>
           </div>
         </div>
       );
