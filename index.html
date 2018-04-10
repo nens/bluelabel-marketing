@@ -252,7 +252,7 @@ $.extend($.validator.messages, {
           </a>
         </div>        
         <div class="copyright-notice-inner">
-          &copy; BlueLabel, 2018
+          &copy; BlueLabel, 2018 | <a href="privacy_statement_10-04-2018.pdf">Privacy Statement</a> (pdf)
         </div>
       </div>
     </div>
@@ -443,6 +443,69 @@ class QApp extends React.Component {
             {
               id: 1,
               open: false,
+              q: "Wat is BlueLabel?",
+              a: (
+                <div>
+                  <p>
+                    BlueLabel is de eerste waterkwetsbaarheidsscan ter wereld 
+                    die op de vierkante meter inzicht geeft in regenwateroverlast.
+                    BlueLabel is een digitale service die overheden en bedrijven in
+                    staat stelt gericht maatregelen te nemen om regenwateroverlast te
+                    voorkomen.
+                  </p>
+                </div>
+              )
+            }, 
+            {
+              id: 2,
+              open: false,
+              q: "Wat is het doel van BlueLabel?",
+              a: (
+                <div>
+                  <p>
+                    BlueLabel werkt aan bewustwording en concrete preventiemaatregelen;
+                    het geeft gemeenten en bedrijven inzicht én handelingsperspectief.
+                  </p>
+                </div>
+              )
+            },
+            {
+              id: 3,
+              open: false,
+              q: "Wat heb ik aan BlueLabel?",
+              a: (
+                <div>
+                  <p>
+                    BlueLabel geeft inzicht in de knelpunten door
+                    regenwateroverlast binnen een gebied. BlueLabel biedt
+                    daarmee een handvat aan overheidsinstellingen zoals de
+                    gemeente, haar inwoners, bedrijven en instanties om aan de
+                    slag te gaan om de schade aan woning, tuin of bedrijf te
+                    voorkomen of te verminderen.
+                  </p>
+                </div>
+              )
+            },
+            {
+              id: 4,
+              open: false,
+              q: "Waarom zijn we BlueLabel gestart?",
+              a: (
+                <div>
+                  <p>
+                    Wij geloven in een aanpak die is gebaseerd op samenwerking
+                    en partnership. Door samen met consumenten en overheden
+                    maatschappelijke problemen, zoals klimaatverandering, aan te
+                    pakken kunnen wij meer bereiken. Daarbij is goede
+                    informatie over regenwateroverlast op perceelniveau
+                    essentieel.
+                  </p>
+                </div>
+              )
+            },
+            {
+              id: 5,
+              open: false,
               q: "Waarom is Achmea partner van BlueLabel?",
               a: (
                 <div>
@@ -461,7 +524,7 @@ class QApp extends React.Component {
               )
             },
             {
-              id: 2,
+              id: 6,
               open: false,
               q: "Waarom is Royal HaskoningDHV partner van BlueLabel?",
               a: (
@@ -483,7 +546,7 @@ class QApp extends React.Component {
               )
             },
             {
-              id: 3,
+              id: 7,
               open: false,
               q: "Waarom is Nelen & Schuurmans partner van BlueLabel?",
               a: (
@@ -494,75 +557,6 @@ class QApp extends React.Component {
                     informatie beschikbaar te stellen. Het doel van BlueLabel,
                     nauwkeurig inzicht geven in de gevolgen van extreme neerslag
                     aan overheden en burgers, past volledig in onze missie.
-                  </p>
-                </div>
-              )
-            },
-            {
-              id: 4,
-              open: false,
-              q: "Wat is het doel van BlueLabel?",
-              a: (
-                <div>
-                  <p>
-                    Het uiteindelijke doel is drieledig: bewustwording,
-                    preventie en signalering van regenwateroverlast in en om de
-                    woning, bedrijfsgebouwen en infrastructuur. Door inzicht te
-                    bieden in risico willen we zowel de publieke sector, als
-                    bedrijven en huizenbezitters handelingsperspectief bieden om
-                    zich hier tegen te wapenen.
-                  </p>
-                </div>
-              )
-            },
-            {
-              id: 5,
-              open: false,
-              q: "Waarom zijn de BlueLabel gestart?",
-              a: (
-                <div>
-                  <p>
-                    Wij geloven in een aanpak die is gebaseerd op samenwerking
-                    en partnership. Door samen met consumenten en overheden
-                    maatschappelijke problemen, zoals klimaatverandering, aan te
-                    pakken kunnen wij meer bereiken dan alleen. Daarbij is goede
-                    informatie over regenwateroverlast op perceelniveau
-                    essentieel.
-                  </p>
-                </div>
-              )
-            },
-            {
-              id: 6,
-              open: false,
-              q: "Wat is BlueLabel?",
-              a: (
-                <div>
-                  <p>
-                    BlueLabel is een aansprekende manier om op perceelniveau aan
-                    te geven wat het risico is op regenwateroverlast. Dit risico
-                    moet voor iedereen begrijpelijk en uniform zijn weergegeven
-                    en een label blijkt daarbij effectief. Daarnaast geeft het
-                    BlueLabel niet alleen het risico weer, maar geeft ook aan
-                    wat de beste oplossing is om overlast te voorkomen of te
-                    beperken.
-                  </p>
-                </div>
-              )
-            },
-            {
-              id: 7,
-              open: false,
-              q: "Wat heb ik aan BlueLabel?",
-              a: (
-                <div>
-                  <p>
-                    BlueLabel geeft inzicht in de knelpunten door
-                    regenwateroverlast binnen een gebied. BlueLabel biedt
-                    daarmee een handvat aan overheidsinstellingen zoals de
-                    gemeente, haar inwoners, bedrijven en instanties om aan de
-                    slag te gaan om de schade aan woning, tuin of bedrijf te
-                    voorkomen of te verminderen.
                   </p>
                 </div>
               )
@@ -600,7 +594,7 @@ class QApp extends React.Component {
                 <div>
                   <p>
                     Elke gemeente is verplicht om een stresstest uit te voeren
-                    voor 2019. De BlueMaps die binnen de service van BlueLabel
+                    in 2019. De BlueMaps die binnen de service van BlueLabel
                     worden geleverd zijn berekend met 3Di en vormen daarmee een
                     zeer betrouwbare basis. De BlueLabels kunnen daarnaast zeer
                     goed worden gebruikt voor deze stresstest en is beschikbaar
@@ -761,7 +755,7 @@ class QApp extends React.Component {
                   worden geïnformeerd over het risico op wateroverlast.
                   BlueLabel is vooralsnog vooral bedoeld om bewustzijn te
                   creëren over hoe groot of klein de impact is van neerslag
-                  overlast op jouw woonhuis en tuin/ perceel.
+                  overlast op uw woonhuis en tuin/ perceel.
                 </div>
               )
             },
@@ -772,7 +766,7 @@ class QApp extends React.Component {
               a: (
                 <div>
                   Nee, het is niet verplicht om een BlueLabel rapport te hebben.
-                  Wel moeten alle gemeenten voor 2019 inzicht te geven in de
+                  Wel moeten alle gemeenten in 2019 inzicht geven in de
                   impact van extreme neerslag, de zogenaamde
                   hemelwaterstresstest.
                 </div>
@@ -787,7 +781,7 @@ class QApp extends React.Component {
                 <div>
                   BlueLabel geeft naast inzicht in het risico ook een aantal
                   tips hoe men het risico op wateroverlast kan verkleinen. Het
-                  is echter belangrijk te beseffen dat het wateroverlast niet
+                  is echter belangrijk te beseffen dat wateroverlast niet
                   altijd te voorkomen is met maatregelen op het perceel zelf.
                   Het is daarom ook van belang om samen met de gemeenten op zoek
                   te gaan naar de meest effectieve maatregelen. Neem daarvoor{" "}
