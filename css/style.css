@@ -55,7 +55,8 @@ body {
   background-image: url("../images/rain.png");
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: right;
+  background-position-x: center;
+  background-position-y: center;
   min-height: 550px;
   display: flex;
   flex-direction: row;
@@ -352,6 +353,19 @@ body {
 /*.bluelabel-and-bluemap {
   padding: 30px;
 }*/
+
+
+
+.articles h2 {
+  line-height: 30px;
+  color: #32335b;
+  font-size: 30px;
+  padding: 15px 0 0 0;
+  font-weight: lighter;
+  margin: 15px 0 0 0;
+}
+
+
 .bluelabel-and-bluemap .tekst {
   padding: 0 30px 0 30px;
 }
@@ -462,6 +476,18 @@ body {
   top: 2px;
   font-size: 30px;
 }
+
+
+
+
+table.download-table {
+  width: 100%;
+  padding: 20px;
+}
+table.download-table tbody tr {
+  height: 40px;
+}
+
 
 .partners-and-signup {
   border-top: 1px solid #80808036;
