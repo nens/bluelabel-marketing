@@ -231,6 +231,21 @@ body {
   margin-left: 50px;
 }
 
+.btn-publications {
+  width: 150px;
+  height: 40px;
+  background: #CC0000;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+  display: flex;
+  border-radius: 20px;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  color: #fff;
+  margin-top: 20px;
+  margin-left: 50px;
+}
+
 /*@media (max-width: 320px) {
   .btn-more-info {
     width: 220px;

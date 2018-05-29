@@ -34,6 +34,9 @@
             <div class="btn-more-info" id="btn-more-info">
               meer info
             </div>
+            <div class="btn-publications" id="btn-publications">
+              publicaties
+            </div>            
         </div>
       </div>
     </div>
@@ -111,7 +114,7 @@
     </div>
 
     <div class="curve"></div>
-    <div class="container">
+    <div class="container" id="scrollToPublications">
       <div class="row">
         <div class="colxs12 colsm6 colmd6 collg6 tekst">
           <h2>Artikelen</h2>
@@ -129,13 +132,13 @@
               <tr>
                 <td>
                   <i class="fas fa-file-pdf"></i>&nbsp;
-                  <a href="./downloads/BL_201804_Riolering.pdf">Riolering, maart 2018</a>
+                  <a href="./downloads/BL_201805_LW.pdf">Land+Water, mei 2018</a>
                 </td>
-              </tr>
+              </tr>              
               <tr>
                 <td>
                   <i class="fas fa-file-pdf"></i>&nbsp;
-                  <a href="./downloads/BL_201805_LW.pdf">Land+Water, mei 2018</a>
+                  <a href="./downloads/BL_201804_Riolering.pdf">Riolering, maart 2018</a>
                 </td>
               </tr>
             </tbody>
@@ -323,6 +326,15 @@ $.extend($.validator.messages, {
       behavior: 'smooth' 
     });
   };
+
+  var btnPublications = document.getElementById("btn-publications");
+  btnPublications.onclick = function(e) {
+    document.querySelector('#scrollToPublications').scrollIntoView({ 
+      block: 'start',
+      behavior: 'smooth' 
+    });
+  };
+
 
   // var btnGoToMap = document.getElementById("btn-go-to-map");
   // btnGoToMap.onclick = function(e) {
